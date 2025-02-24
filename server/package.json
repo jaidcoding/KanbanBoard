@@ -10,8 +10,7 @@
     "start": "npm run build && node dist/server.js --ignore client",
     "dev": "npx nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node dist/seeds/index.js",
-    "postinstall": "rimraf node_modules/minipass"
+    "seed": "node dist/seeds/index.js"
   },
   "nodemonConfig": {
     "watch": [
