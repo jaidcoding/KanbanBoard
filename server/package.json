@@ -30,8 +30,7 @@
     "pg": "^8.11.5",
     "sequelize": "^6.37.3",
     "bcrypt": "^5.1.0",
-    "minimatch": "^5.0.0",
-    "minipass": "^5.0.0"
+    "minimatch": "^5.0.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
