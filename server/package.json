@@ -29,8 +29,7 @@
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.5",
     "sequelize": "^6.37.3",
-    "bcryptjs": "^2.4.3",
-    "minimatch": "^5.0.0"
+    "bcryptjs": "^2.4.3"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
