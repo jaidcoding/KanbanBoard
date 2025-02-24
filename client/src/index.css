@@ -54,12 +54,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #b8b8b8;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #000000;
 }
 button:focus,
 button:focus-visible {
@@ -105,7 +105,7 @@ tbody tr:nth-child(odd) {
 }
 
 .nav-title a {
-  color: #b864c4;
+  color: #000000;
 }
 
 .nav-item {
@@ -182,8 +182,11 @@ tbody tr:nth-child(odd) {
 
 .form {
   width: 60%;
-  height: 80%;
-  background-color: #b864c4;
+  height: 40%;
+  border: #000 2px solid;
+  border-radius: 10px;
+  padding: 2.5%;
+  background-color: #c5c5c5;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -192,7 +195,7 @@ tbody tr:nth-child(odd) {
 }
 
 .form > h1, .form > label {
-  color: yellow;
+  color: rgb(0, 0, 0);
 }
 
 .form > input {
