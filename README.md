@@ -1,78 +1,57 @@
-# KanbanBoard
+# Kanban Board
 
-KanbanBoard is a project management tool that helps you visualize your work, limit work-in-progress, and maximize efficiency. This project is built using Node.js, Express, Sequelize, and PostgreSQL.
+A full-stack project board with JWT authentication — create tickets, assign them, and drag them through swimlanes.
+
+![React](https://img.shields.io/badge/React-61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6)
+![Express](https://img.shields.io/badge/Express-000000)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1)
 
 ## Features
 
-- User authentication and authorization
-- Create, update, and delete tickets
-- Assign tickets to users
-- Track ticket status
+- **Authentication** — login issues a JWT; protected routes reject unauthenticated requests
+- **Tickets** — full create, read, update and delete
+- **Assignment** — tickets belong to a user
+- **Swimlanes** — tickets grouped by status (`Todo`, `In Progress`, `Done`)
+- **Session handling** — tokens stored client-side, cleared on logout
 
-## Prerequisites
+## Architecture
 
-- Node.js (v14 or higher)
-- PostgreSQL
+```
+client/                       React + TypeScript (Vite)
+  src/api/authAPI.tsx         login and token handling
+  src/api/ticketAPI.tsx       ticket CRUD
+  src/api/userAPI.tsx         user lookups
+  src/components/Swimlane.tsx status columns
+  src/components/TicketCard.tsx
+  src/interfaces/             shared response and entity types
+server/
+  models/                     Sequelize User and Ticket models
+  routes/                     REST endpoints
+  middleware/                 JWT verification
+  seeds/                      seed data
+```
 
-## Installation
+## Setup
 
-1. Clone the repository:
+**Prerequisites:** Node.js 14+, PostgreSQL
 
-   ```sh
-   git clone https://github.com/jaidcoding/KanbanBoard.git
-   cd KanbanBoard
-   ```
+1. Create the database and set your connection details plus a `JWT_SECRET` in `server/.env`
+2. Install and seed:
 
-2. Install dependencies:
+```bash
+npm install
+npm run seed
+```
 
-   ```sh
-   npm install
-   ```
+3. Run both halves together:
 
-3. Set up the environment variables:
+```bash
+npm run start:dev
+```
 
-   Create a `.env` file in the `server` directory and add the following variables:
+Client on http://localhost:3000, API on http://localhost:3001.
 
-   ```properties
-   DB_NAME=kanbanboard_db_b5v8
-   DB_USER=kanbanboard_db_b5v8_user
-   DB_PASSWORD=PP3r4xyKhn82YyiQ1uOWeqKs37EF1lMZ
-   DB_HOST=dpg-cutth2l6l47c73a972cg-a
-   DB_PORT=5432
-   JWT_SECRET_KEY=6148d189993b2bee606c9baf5e7bed6c0096da43bbb3a4a7ca156b78a6b5a0f64383009c346b96dd3412c65447c4001c7c79610f8293ddf9a635dbc8f5dc2a35
-   ```
+## Stack
 
-4. Run the database migrations:
-
-   ```sh
-   npx sequelize-cli db:migrate
-   ```
-
-5. Start the server:
-
-   ```sh
-   npm start
-   ```
-
-## Usage
-
-1. Open your browser and navigate to `http://localhost:3000`.
-2. Register a new user or log in with an existing account.
-3. Create, update, and manage your tickets.
-
-## Deployment
-
-To deploy the application on Render, follow these steps:
-
-1. Push your code to GitHub.
-2. Connect your GitHub repository to Render.
-3. Set the environment variables in the Render dashboard as described in the "Installation" section.
-4. Deploy the application.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+React · TypeScript · Vite · Express · Sequelize · PostgreSQL · JWT
