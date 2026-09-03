@@ -55,3 +55,7 @@ Client on http://localhost:3000, API on http://localhost:3001.
 ## Stack
 
 React · TypeScript · Vite · Express · Sequelize · PostgreSQL · JWT
+
+## License
+
+MIT — see [LICENSE](LICENSE).
